@@ -3025,3 +3025,123 @@ select.field__input { appearance: auto; cursor: pointer; }
 
   .quick-exit { right: 12px; bottom: 12px; padding: 10px 14px; }
 }
+
+@keyframes surgir {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes aparecer {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes abrir-janela {
+  from { opacity: 0; transform: translateY(16px) scale(.97); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes descer-menu {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: none; }
+}
+
+body { animation: aparecer .4s ease both; }
+
+html.anima .revelar {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1);
+  transition-delay: var(--atraso, 0ms);
+}
+
+html.anima .revelar.visivel {
+  opacity: 1;
+  transform: none;
+}
+
+.hero__image img,
+.fs-hero__image,
+.vol-hero__image,
+.welcome__image,
+.qs-limits__image,
+.faq__image img {
+  animation: flutuar 6s ease-in-out infinite;
+}
+
+.choice-card,
+.qs-card,
+.expect-card,
+.vol-how__grid li {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.choice-card:hover,
+.qs-card:hover,
+.vol-how__grid li:hover { transform: translateY(-4px); }
+.expect-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(216, 115, 92, .12); }
+
+.btn,
+.fs-submit,
+.fs-call,
+.path-card__btn,
+.chat-composer__send,
+.map-locate,
+.carousel__arrow,
+.choice-card__arrow,
+.qs-cta__card {
+  transition: transform .15s ease, filter .15s ease, background .2s ease, box-shadow .2s ease;
+}
+.btn:active,
+.fs-submit:active,
+.fs-call:active,
+.path-card__btn:active,
+.chat-composer__send:active,
+.map-locate:active,
+.type-card:active,
+.fs-chip:active span,
+.vol-area:active,
+.map-filter:active { transform: scale(.96); }
+
+.nav__link,
+.footer__col a,
+.back-link { transition: color .2s ease, opacity .2s ease; }
+
+.result-card,
+.vol-card,
+.pn-material { animation: surgir .45s cubic-bezier(.2, .7, .2, 1) both; }
+
+.result-card:nth-child(2), .vol-card:nth-child(2), .pn-material:nth-child(2) { animation-delay: .06s; }
+.result-card:nth-child(3), .vol-card:nth-child(3), .pn-material:nth-child(3) { animation-delay: .12s; }
+.result-card:nth-child(4), .vol-card:nth-child(4), .pn-material:nth-child(4) { animation-delay: .18s; }
+.result-card:nth-child(n+5), .vol-card:nth-child(n+5), .pn-material:nth-child(n+5) { animation-delay: .24s; }
+
+.chat-msg:last-child { animation: surgir .3s ease both; }
+.pn-report.is-done .pn-report__result { animation: surgir .3s ease both; }
+.chat-alert:not([hidden]), .auth__status:not(:empty), .pn-saved:not(:empty) { animation: surgir .3s ease both; }
+
+.pn-tab:not([hidden]) { animation: surgir .4s cubic-bezier(.2, .7, .2, 1) both; }
+
+.faq__item[open] p { animation: surgir .3s ease both; }
+
+.vol-dialog[open] { animation: abrir-janela .3s cubic-bezier(.2, .7, .2, 1) both; }
+.vol-dialog[open]::backdrop { animation: aparecer .3s ease both; }
+
+.nav.is-open { animation: descer-menu .25s ease both; }
+
+.quick-exit, .test-badge { animation: surgir .5s .6s ease both; }
+
+.map-pin { transition: transform .25s cubic-bezier(.2, .7, .2, 1); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
