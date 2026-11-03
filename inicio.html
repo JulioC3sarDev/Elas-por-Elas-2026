@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início | Elas por Elas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Quicksand:wght@400;500;600;700&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <button class="quick-exit js-quick-exit" type="button" aria-label="Saída rápida: sair desta página agora">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+    Saída rápida
+  </button>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Elas por Elas, página inicial">Elas por Elas</a>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="menu" class="nav" aria-label="Menu principal">
+        <a href="quem-somos.html" class="nav__link">Quem Somos</a>
+        <a href="index.html#faq" class="nav__icon" aria-label="Ajuda">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+        </a>
+        <a href="login.html" class="btn btn--outline nav__cta">Sou voluntária</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <section class="welcome">
+      <div class="container">
+        <div class="welcome__box">
+          <div class="welcome__text">
+            <span class="pill">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Você está em um espaço seguro
+            </span>
+            <h1 class="welcome__title">
+              <strong>Bem-vinda,</strong>
+              como podemos te ajudar?
+            </h1>
+            <p class="welcome__subtitle">
+              Escolha um caminho abaixo. Você pode voltar aqui quando quiser,
+              no seu tempo.
+            </p>
+          </div>
+          <img class="welcome__image" src="assets/img/icone-ajuda.png" alt="" aria-hidden="true">
+        </div>
+      </div>
+    </section>
+
+    <section class="paths" aria-labelledby="paths-titulo">
+      <div class="container">
+        <h2 id="paths-titulo" class="sr-only">O que você quer fazer agora</h2>
+        <div class="paths__grid">
+
+          <article class="path-card path-card--rosa">
+            <span class="path-card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+            </span>
+            <h3 class="path-card__title">Formulário</h3>
+            <p>Responda algumas perguntas e descubra qual serviço é ideal para a sua necessidade.</p>
+            <a href="buscar.html" class="path-card__btn">Responder <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="path-card path-card--lilas">
+            <span class="path-card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <h3 class="path-card__title">Postos próximos</h3>
+            <p>Localize delegacias e centros de apoio perto de você para buscar ajuda ou registrar uma ocorrência.</p>
+            <a href="mapa.html" class="path-card__btn">Ver postos próximos <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="path-card path-card--lilas">
+            <span class="path-card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <h3 class="path-card__title">Rede de voluntárias</h3>
+            <p>Encontre psicólogas, advogadas e outras profissionais que atendem gratuitamente.</p>
+            <a href="voluntarias.html" class="path-card__btn">Conhecer a rede <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="path-card path-card--rosa">
+            <span class="path-card__badge">Novo</span>
+            <span class="path-card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg>
+            </span>
+            <h3 class="path-card__title">Roda de conversa</h3>
+            <p>Desabafe e troque apoio com outras mulheres, de forma anônima e com moderação.</p>
+            <a href="chat.html" class="path-card__btn">Entrar na roda <span aria-hidden="true">→</span></a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="steps" aria-labelledby="steps-titulo">
+      <div class="container">
+        <h2 id="steps-titulo" class="section-title">
+          <span class="section-title__leaf" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+          </span>
+          Sobre o <span class="underline">Formulário</span>
+        </h2>
+
+        <div class="carousel js-carousel" aria-roledescription="carrossel" aria-label="Passo a passo do formulário">
+          <p class="carousel__kicker">Passo a <strong>Passo</strong></p>
+
+          <button class="carousel__arrow carousel__arrow--prev js-prev" type="button" aria-label="Passo anterior">←</button>
+
+          <div class="carousel__viewport" aria-live="polite">
+            <div class="carousel__slide" role="group" aria-roledescription="passo" aria-label="1 de 4">
+              <span class="carousel__number">01</span>
+              <div>
+                <h3>Preencha o formulário</h3>
+                <p>Informe seu município, o bairro (se quiser) e o tipo de atendimento que procura.
+                   Não pedimos relatos nem detalhes sobre o que aconteceu.</p>
+              </div>
+            </div>
+            <div class="carousel__slide" role="group" aria-roledescription="passo" aria-label="2 de 4" hidden>
+              <span class="carousel__number">02</span>
+              <div>
+                <h3>Veja o que existe perto de você</h3>
+                <p>Mostramos unidades públicas e profissionais voluntárias organizadas por
+                   localização e especialidade.</p>
+              </div>
+            </div>
+            <div class="carousel__slide" role="group" aria-roledescription="passo" aria-label="3 de 4" hidden>
+              <span class="carousel__number">03</span>
+              <div>
+                <h3>Escolha quem vai te atender</h3>
+                <p>Compare os perfis das profissionais verificadas e veja os serviços que cada
+                   uma oferece.</p>
+              </div>
+            </div>
+            <div class="carousel__slide" role="group" aria-roledescription="passo" aria-label="4 de 4" hidden>
+              <span class="carousel__number">04</span>
+              <div>
+                <h3>Entre em contato no seu tempo</h3>
+                <p>Use os contatos indicados quando se sentir pronta. Você decide quando e
+                   como começar.</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="carousel__arrow carousel__arrow--next js-next" type="button" aria-label="Próximo passo">→</button>
+
+          <div class="carousel__dots" role="group" aria-label="Escolher passo">
+            <button class="carousel__dot is-active" type="button" aria-label="Passo 1" aria-current="true"></button>
+            <button class="carousel__dot" type="button" aria-label="Passo 2"></button>
+            <button class="carousel__dot" type="button" aria-label="Passo 3"></button>
+            <button class="carousel__dot" type="button" aria-label="Passo 4"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="community" aria-labelledby="community-titulo">
+      <div class="container">
+        <h2 id="community-titulo" class="section-title section-title--center">
+          Ninguém precisa passar por isso <span class="underline">sozinha</span>
+        </h2>
+
+        <div class="community__grid">
+
+          <article class="feature feature--chat">
+            <div class="feature__head">
+              <h3 class="feature__title">Roda de conversa</h3>
+              <p>Um lugar para desabafar e se apoiar entre mulheres. Você entra com um
+                 apelido, sem mostrar seu nome ou e-mail.</p>
+              <ul class="chips" aria-label="Como funciona a roda">
+                <li>Anônimo</li>
+                <li>Moderado</li>
+                <li>Sem julgamentos</li>
+              </ul>
+            </div>
+
+            <div class="chat-preview" aria-hidden="true">
+              <span class="chat-preview__label">Prévia ilustrativa</span>
+              <div class="bubble">
+                <span class="bubble__name">Girassol</span>
+                Hoje foi um dia difícil, mas consegui conversar com alguém.
+              </div>
+              <div class="bubble bubble--me">
+                <span class="bubble__name">Você</span>
+                Que bom que você deu esse passo. Estamos com você.
+              </div>
+              <div class="bubble">
+                <span class="bubble__name">Lua</span>
+                Também passei por isso. Fica mais leve com o tempo. 💜
+              </div>
+            </div>
+
+            <div class="feature__foot">
+              <p class="feature__note">Nunca compartilhe seu endereço, telefone ou dados de outras pessoas na roda.</p>
+              <a href="chat.html" class="btn btn--dark">Entrar na roda <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="feature feature--network">
+            <h3 class="feature__title">Rede de voluntárias</h3>
+            <p>Profissionais com registro verificado que doam seu tempo para acolher você.</p>
+
+            <ul class="roles">
+              <li>
+                <span class="roles__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span>
+                <div><strong>Psicólogas</strong><span>Escuta e acolhimento emocional</span></div>
+              </li>
+              <li>
+                <span class="roles__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7 2 14a3 3 0 0 0 6 0Z"/><path d="m19 7-3 7a3 3 0 0 0 6 0Z"/><path d="M8 21h8"/></svg></span>
+                <div><strong>Advogadas</strong><span>Orientação sobre seus direitos</span></div>
+              </li>
+              <li>
+                <span class="roles__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></span>
+                <div><strong>Assistentes sociais</strong><span>Acesso a benefícios e serviços</span></div>
+              </li>
+              <li>
+                <span class="roles__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span>
+                <div><strong>Saúde</strong><span>Cuidado com o corpo e a mente</span></div>
+              </li>
+            </ul>
+
+            <div class="feature__foot">
+              <a href="voluntarias.html" class="btn btn--coral">Conhecer a rede <span aria-hidden="true">→</span></a>
+              <a href="cadastro.html" class="feature__link">Sou profissional e quero ajudar</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="expect" aria-labelledby="expect-titulo">
+      <div class="container">
+        <h2 id="expect-titulo" class="section-title section-title--center section-title--coral">
+          O que esperar do atendimento
+        </h2>
+
+        <div class="expect__grid">
+          <article class="expect-card">
+            <span class="expect-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span>
+            <h3>Gratuidade</h3>
+            <p>Todos os atendimentos realizados são voluntários e, portanto, 100% gratuitos pelo tempo que durarem.</p>
+          </article>
+          <article class="expect-card">
+            <span class="expect-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></svg></span>
+            <h3>Autonomia</h3>
+            <p>Você decide quando iniciar o atendimento, respeitando o prazo de 15 dias para o primeiro contato. Caso queira interrompê-lo por qualquer motivo, você também terá essa liberdade.</p>
+          </article>
+          <article class="expect-card">
+            <span class="expect-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <h3>Segurança</h3>
+            <p>Seus dados estão seguros conosco. Priorizamos a sua privacidade e utilizamos medidas de segurança para garantir a proteção das suas informações.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="emergency" aria-label="Canais oficiais de emergência">
+      <div class="container">
+        <div class="emergency__box">
+          <p class="emergency__line">
+            Em <strong>perigo?</strong> Ligue agora para o
+            <a href="tel:190" class="emergency__number">190</a>
+          </p>
+          <p class="emergency__line emergency__line--right">
+            Para orientação, ligue
+            <a href="tel:180" class="emergency__number">180.</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/inicio.js"></script>
+</body>
+</html>

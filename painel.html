@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel da voluntária | Elas por Elas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Quicksand:wght@400;500;600;700&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="pn-body">
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="painel.html" class="logo" aria-label="Elas por Elas, painel">Elas por Elas</a>
+      <div class="pn-user">
+        <span class="auth__tag pn-user__tag">Área da voluntária</span>
+        <span class="pn-user__avatar js-user-initials" aria-hidden="true"></span>
+        <span class="pn-user__name">Olá, <strong class="js-user-name"></strong></span>
+        <a href="index.html" class="pn-user__logout">Sair</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="pn">
+    <div class="container pn__layout">
+
+      <nav class="pn-nav" aria-label="Menu do painel">
+        <a href="#inicio" class="pn-nav__link" data-tab="inicio">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Início</a>
+        <a href="#perfil" class="pn-nav__link" data-tab="perfil">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Meu perfil</a>
+        <a href="#rodas" class="pn-nav__link" data-tab="rodas">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 8h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-1v3l-3-3h-4a2 2 0 0 1-2-2v-1"/><path d="M14 3H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1v3l3-3h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg>Rodas ao vivo
+          <span class="pn-nav__live" aria-hidden="true"></span></a>
+        <a href="#moderacao" class="pn-nav__link" data-tab="moderacao">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Moderação
+          <span class="pn-nav__badge js-badge"></span></a>
+        <a href="#materiais" class="pn-nav__link" data-tab="materiais">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>Materiais</a>
+        <a href="#conta" class="pn-nav__link" data-tab="conta">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Conta</a>
+      </nav>
+
+      <div class="pn__content">
+        <p class="demo-note pn__demo">Protótipo: os dados deste painel são <strong>fictícios</strong>.</p>
+
+        <section class="pn-tab" id="tab-inicio" aria-labelledby="t-inicio">
+          <h1 id="t-inicio" class="pn__title">Olá, <span class="js-user-first"></span> 💜</h1>
+          <p class="pn__lead">Obrigada por fazer parte da rede. Aqui você cuida do seu perfil e ajuda a manter a roda de conversa segura.</p>
+
+          <div class="pn-status js-status"></div>
+
+          <div class="pn-grid">
+            <article class="pn-card">
+              <h2 class="pn-card__title">Disponibilidade</h2>
+              <label class="pn-switch">
+                <input type="checkbox" class="js-available" checked>
+                <span class="pn-switch__track" aria-hidden="true"></span>
+                <span class="pn-switch__text">
+                  <strong class="js-available-label">Aceitando novos contatos</strong>
+                  <small class="js-available-hint">Seu perfil aparece na busca e na rede de voluntárias.</small>
+                </span>
+              </label>
+              <p class="pn-card__note">Precisa de uma pausa? Desligue aqui. Seu perfil some da busca até você ligar de novo.</p>
+            </article>
+
+            <article class="pn-card">
+              <h2 class="pn-card__title">Seu perfil</h2>
+              <div class="pn-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Perfil preenchido">
+                <span class="pn-progress__bar js-progress-bar"></span>
+              </div>
+              <p class="pn-progress__label js-progress-label"></p>
+              <ul class="pn-checklist js-checklist"></ul>
+              <a href="#perfil" class="pn-link">Editar perfil →</a>
+            </article>
+
+            <article class="pn-card pn-card--accent">
+              <h2 class="pn-card__title">Roda de conversa</h2>
+              <p class="pn-big"><strong class="js-pending">0</strong> denúncias para revisar</p>
+              <p class="pn-card__note js-next-shift"></p>
+              <div class="pn-card__btns">
+                <a href="#rodas" class="btn btn--dark">Ver rodas ao vivo</a>
+                <a href="#moderacao" class="btn btn--outline">Denúncias</a>
+              </div>
+            </article>
+
+            <article class="pn-card">
+              <h2 class="pn-card__title">Lembretes da rede</h2>
+              <ul class="pn-reminders">
+                <li>O atendimento é sempre gratuito.</li>
+                <li>Não peça relatos detalhados no primeiro contato.</li>
+                <li>Em risco imediato, oriente a ligar 190.</li>
+                <li>Cuide de você também. Pausas fazem parte.</li>
+              </ul>
+              <a href="#materiais" class="pn-link">Ver materiais →</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="pn-tab" id="tab-perfil" aria-labelledby="t-perfil" hidden>
+          <h1 id="t-perfil" class="pn__title">Meu perfil</h1>
+          <p class="pn__lead">É isso que as mulheres veem na busca e na rede de voluntárias.</p>
+
+          <div class="pn-profile">
+            <form class="pn-form js-profile-form" novalidate>
+
+              <fieldset class="pn-fieldset">
+                <legend>Identificação</legend>
+                <div class="field">
+                  <label class="field__label" for="p-nome">Nome de exibição</label>
+                  <input class="field__input" id="p-nome" name="nome" required maxlength="60">
+                </div>
+                <div class="field-row">
+                  <div class="field">
+                    <label class="field__label" for="p-prof">Profissão</label>
+                    <input class="field__input" id="p-prof" name="profissao" readonly>
+                  </div>
+                  <div class="field">
+                    <label class="field__label" for="p-reg">Registro profissional</label>
+                    <input class="field__input" id="p-reg" name="registro" readonly aria-describedby="p-reg-dica">
+                  </div>
+                </div>
+                <p class="field__hint" id="p-reg-dica">Para mudar profissão ou registro, fale com a equipe: é preciso uma nova verificação.</p>
+              </fieldset>
+
+              <fieldset class="pn-fieldset">
+                <legend>Sobre você</legend>
+                <div class="field">
+                  <label class="field__label" for="p-bio">Apresentação</label>
+                  <textarea class="field__input pn-textarea" id="p-bio" name="bio" maxlength="300" rows="4"
+                            aria-describedby="p-bio-cont"></textarea>
+                  <p class="field__hint"><span id="p-bio-cont" class="js-bio-count">0</span>/300 · Use linguagem simples e acolhedora.</p>
+                </div>
+
+                <p class="field__label">Como você pode ajudar</p>
+                <div class="pn-checks js-services"></div>
+              </fieldset>
+
+              <fieldset class="pn-fieldset">
+                <legend>Atendimento</legend>
+                <p class="field__label">Formas de atendimento</p>
+                <div class="fs-chips js-modes"></div>
+
+                <div class="field-row">
+                  <div class="field">
+                    <label class="field__label" for="p-disp">Dias e horários</label>
+                    <input class="field__input" id="p-disp" name="disponibilidade" placeholder="Ex.: Seg e qua à noite">
+                  </div>
+                  <div class="field">
+                    <label class="field__label" for="p-tel">Telefone / WhatsApp</label>
+                    <input class="field__input" id="p-tel" name="telefone" type="tel" inputmode="tel">
+                  </div>
+                </div>
+
+                <div class="field-row">
+                  <div class="field">
+                    <label class="field__label" for="p-mun">Município</label>
+                    <select class="field__input" id="p-mun" name="municipio"></select>
+                  </div>
+                  <div class="field">
+                    <label class="field__label" for="p-bairro">Bairro</label>
+                    <input class="field__input" id="p-bairro" name="bairro">
+                  </div>
+                </div>
+
+                <div class="field js-address-field">
+                  <label class="field__label" for="p-end">Endereço de atendimento <span class="field__optional">(só para presencial)</span></label>
+                  <input class="field__input" id="p-end" name="endereco" placeholder="Ex.: informado no contato">
+                </div>
+              </fieldset>
+
+              <div class="pn-form__actions">
+                <button type="submit" class="btn btn--coral">Salvar alterações</button>
+                <p class="pn-saved js-saved" role="status" aria-live="polite"></p>
+              </div>
+            </form>
+
+            <aside class="pn-preview" aria-label="Prévia do seu perfil">
+              <p class="pn-preview__label">Prévia: assim as mulheres veem você</p>
+              <div class="js-preview"></div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="pn-tab" id="tab-rodas" aria-labelledby="t-rodas" hidden>
+          <h1 id="t-rodas" class="pn__title">Rodas ao vivo</h1>
+          <p class="pn__lead">Acompanhe as conversas, acolha quando precisar e aja se algo desrespeitar os combinados.</p>
+
+          <div class="pn-live">
+            <aside class="pn-live__rooms" aria-label="Rodas">
+              <ul class="js-live-rooms"></ul>
+            </aside>
+
+            <div class="pn-live__main">
+              <header class="pn-live__head">
+                <div>
+                  <h2 class="chat-head__title js-live-title"></h2>
+                  <p class="chat-head__desc js-live-desc"></p>
+                </div>
+                <span class="pn-live__as">Você fala como <strong>Moderação</strong></span>
+              </header>
+
+              <ol class="chat-messages pn-live__msgs js-live-msgs" aria-live="polite" aria-label="Mensagens da roda"></ol>
+
+              <div class="pn-live__templates" role="group" aria-label="Mensagens prontas">
+                <button type="button" data-tpl="Lembrete da roda: não compartilhem telefone, endereço ou nomes de outras pessoas. 💜">Lembrar combinados</button>
+                <button type="button" data-tpl="Se alguém estiver em perigo agora, ligue 190. Para apoio emocional, 188 (CVV), 24h e gratuito.">Canais de ajuda</button>
+                <button type="button" data-tpl="Bem-vinda à roda! Fique à vontade para falar ou só ler, no seu tempo.">Boas-vindas</button>
+                <button type="button" data-tpl="Vamos manter a roda sem julgamentos: cada uma tem seu tempo e sua história.">Sem julgamentos</button>
+              </div>
+
+              <form class="chat-composer js-live-form">
+                <label class="sr-only" for="msg-mod">Mensagem da moderação</label>
+                <textarea id="msg-mod" rows="1" maxlength="500" placeholder="Escreva como Moderação…"></textarea>
+                <button type="submit" class="chat-composer__send" aria-label="Enviar como Moderação">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 19-9-9 19-2-8-8-2z"/></svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="pn-tab" id="tab-moderacao" aria-labelledby="t-mod" hidden>
+          <h1 id="t-mod" class="pn__title">Moderação da roda</h1>
+          <p class="pn__lead">Revise as mensagens denunciadas e acompanhe os alertas. Na dúvida, prefira proteger.</p>
+
+          <div class="pn-alert-risk js-risk"></div>
+
+          <div class="pn-mod-head">
+            <h2 class="pn-card__title">Denúncias para revisar</h2>
+            <span class="map-panel__count js-pending-label"></span>
+          </div>
+          <ol class="pn-reports js-reports"></ol>
+
+          <h2 class="pn-card__title pn-shifts__title">Turnos de moderação desta semana</h2>
+          <p class="pn-card__note">Cada turno precisa de pelo menos duas moderadoras.</p>
+          <ul class="pn-shifts js-shifts"></ul>
+        </section>
+
+        <section class="pn-tab" id="tab-materiais" aria-labelledby="t-mat" hidden>
+          <h1 id="t-mat" class="pn__title">Materiais de apoio</h1>
+          <p class="pn__lead">Guias rápidos para acolher bem e encaminhar para a rede.</p>
+          <div class="pn-materials js-materials"></div>
+        </section>
+
+        <section class="pn-tab" id="tab-conta" aria-labelledby="t-conta" hidden>
+          <h1 id="t-conta" class="pn__title">Conta</h1>
+
+          <div class="pn-grid pn-grid--2">
+            <form class="pn-card js-pass-form" novalidate>
+              <h2 class="pn-card__title">Alterar senha</h2>
+              <div class="field">
+                <label class="field__label" for="c-atual">Senha atual</label>
+                <input class="field__input" type="password" id="c-atual" autocomplete="current-password">
+              </div>
+              <div class="field">
+                <label class="field__label" for="c-nova">Nova senha</label>
+                <input class="field__input" type="password" id="c-nova" autocomplete="new-password" aria-describedby="c-dica">
+                <p class="field__hint" id="c-dica">Pelo menos 8 caracteres, com letras e números.</p>
+              </div>
+              <button type="submit" class="btn btn--dark pn-card__btn">Salvar nova senha</button>
+              <p class="pn-saved js-pass-msg" role="status" aria-live="polite"></p>
+            </form>
+
+            <div class="pn-card">
+              <h2 class="pn-card__title">Seus dados</h2>
+              <p class="pn-card__note">Guardamos apenas o necessário para o seu perfil: nome, e-mail, telefone de contato, área e registro profissional.</p>
+              <a href="index.html" class="btn btn--outline pn-card__btn">Sair da conta</a>
+              <button type="button" class="pn-danger js-delete">Excluir minha conta</button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <dialog class="vol-dialog js-dialog" aria-labelledby="dlg-title">
+    <div class="vol-dialog__inner js-dialog-body"></div>
+  </dialog>
+
+  <script src="js/config.js"></script>
+  <script src="js/dados-exemplo.js"></script>
+  <script src="js/rodas-dados.js"></script>
+  <script src="js/painel.js"></script>
+</body>
+</html>

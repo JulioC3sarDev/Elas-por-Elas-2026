@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rede de voluntárias | Elas por Elas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;600;700&family=Quicksand:wght@400;500;600;700&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <button class="quick-exit js-quick-exit" type="button" aria-label="Saída rápida: sair desta página agora">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+    Saída rápida
+  </button>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Elas por Elas, página inicial">Elas por Elas</a>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="menu" class="nav" aria-label="Menu principal">
+        <a href="quem-somos.html" class="nav__link">Quem Somos</a>
+        <a href="index.html#faq" class="nav__icon" aria-label="Ajuda">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+        </a>
+        <a href="login.html" class="btn btn--outline nav__cta">Sou voluntária</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="vol-page">
+
+    <section class="vol-hero">
+      <div class="container">
+        <div class="vol-hero__box">
+          <div class="vol-hero__text">
+            <a href="inicio.html" class="back-link"><span aria-hidden="true">←</span> Voltar</a>
+            <span class="fs-pill">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              Profissionais verificadas
+            </span>
+            <h1 class="vol-hero__title">
+              Rede de <span class="fs-underline">voluntárias</span>
+            </h1>
+            <p class="vol-hero__lead">Mulheres que doam seu tempo e seu conhecimento para cuidar de você. Todo atendimento é gratuito.</p>
+
+            <ul class="vol-stats" aria-label="A rede em números">
+              <li><strong class="js-total">0</strong><span>profissionais</span></li>
+              <li><strong class="js-areas">0</strong><span>áreas de atuação</span></li>
+              <li><strong>100%</strong><span>gratuito</span></li>
+            </ul>
+          </div>
+          <img class="vol-hero__image" src="assets/img/icone-voluntaria.png" alt="" aria-hidden="true">
+        </div>
+      </div>
+    </section>
+
+    <section class="vol-filters-wrap" aria-label="Filtrar profissionais">
+      <div class="container">
+        <div class="vol-filters">
+          <div class="vol-areas js-areas-filter" role="group" aria-label="Área de atuação">
+            <button type="button" class="vol-area is-active" data-area="" aria-pressed="true">Todas</button>
+          </div>
+
+          <div class="vol-filters__row">
+            <div class="map-search">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+              <label class="sr-only" for="busca-vol">Pesquisar</label>
+              <input type="search" id="busca-vol" placeholder="Pesquise por nome ou assunto" autocomplete="off">
+            </div>
+            <label class="sr-only" for="municipio-vol">Município</label>
+            <select id="municipio-vol" class="map-select">
+              <option value="">Todos os municípios</option>
+            </select>
+            <label class="sr-only" for="modalidade-vol">Forma de atendimento</label>
+            <select id="modalidade-vol" class="map-select">
+              <option value="">Qualquer forma de atendimento</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vol-list-wrap" aria-labelledby="vol-lista-titulo">
+      <div class="container">
+        <div class="vol-list__head">
+          <h2 id="vol-lista-titulo" class="map-panel__title">Profissionais disponíveis</h2>
+          <span class="map-panel__count js-count" aria-live="polite"></span>
+        </div>
+        <p class="demo-note">Protótipo: os perfis abaixo são <strong>dados de exemplo fictícios</strong>.</p>
+        <div class="vol-grid js-grid"></div>
+      </div>
+    </section>
+
+    <section class="vol-how" aria-labelledby="como-titulo">
+      <div class="container">
+        <h2 id="como-titulo" class="section-title section-title--center">Como funciona o <span class="underline">atendimento</span></h2>
+        <ol class="vol-how__grid">
+          <li>
+            <span class="vol-how__num">1</span>
+            <h3>Escolha uma profissional</h3>
+            <p>Veja a área, a forma de atendimento e os horários de cada voluntária.</p>
+          </li>
+          <li>
+            <span class="vol-how__num">2</span>
+            <h3>Entre em contato no seu tempo</h3>
+            <p>Mande uma mensagem ou ligue quando se sentir pronta. Você não precisa contar sua história no primeiro contato.</p>
+          </li>
+          <li>
+            <span class="vol-how__num">3</span>
+            <h3>Receba apoio gratuito</h3>
+            <p>Nenhuma voluntária pode cobrar pelo atendimento. Se isso acontecer, avise a nossa equipe.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="vol-cta-wrap">
+      <div class="container">
+        <div class="vol-cta">
+          <div>
+            <h2>É profissional e quer ajudar?</h2>
+            <p>Psicólogas, advogadas, assistentes sociais e profissionais de saúde podem fazer parte da rede.</p>
+          </div>
+          <a href="cadastro.html" class="btn btn--coral">Quero ser voluntária <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <dialog class="vol-dialog js-dialog" aria-labelledby="perfil-nome">
+    <div class="vol-dialog__inner js-dialog-body"></div>
+  </dialog>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/inicio.js"></script>
+  <script src="js/dados-exemplo.js"></script>
+  <script src="js/voluntarias.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elas por Elas | Encontre apoio perto de você</title>
+  <meta name="description" content="Encontre unidades de apoio e profissionais voluntárias em Pernambuco, por cidade, bairro e tipo de serviço.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Quicksand:wght@400;500;600;700&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Elas por Elas, página inicial">Elas por Elas</a>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="menu" class="nav" aria-label="Menu principal">
+        <a href="login.html" class="btn btn--outline nav__cta">Sou voluntária</a>
+        <a href="inicio.html" class="btn btn--primary nav__cta">Acessar</a>
+        <a href="quem-somos.html" class="nav__link">Quem Somos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <h1 class="hero__title">
+            Você não está
+            <strong>sozinha</strong> nessa
+          </h1>
+          <p class="hero__subtitle">
+            Você não precisa saber por onde começar.
+            Escolha sua cidade e veja os serviços de apoio mais perto de você.
+          </p>
+          <a href="#mapa" class="btn btn--primary btn--shadow">
+            Saiba Mais <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="hero__image">
+          <img src="assets/img/hero-punhos.png"
+               alt="Ilustração de três punhos erguidos de mulheres diversas, cercados por flores">
+        </div>
+      </div>
+    </section>
+
+    <section class="choices" aria-label="Como podemos te ajudar">
+      <div class="container choices__grid">
+
+        <article class="choice-card">
+          <img class="choice-card__icon" src="assets/img/icone-ajuda.png" alt="" aria-hidden="true">
+          <div class="choice-card__body">
+            <h2 class="choice-card__title">Quero buscar ajuda</h2>
+            <p>
+              Sua vida sem violência começa aqui. Receba atendimento de
+              <strong>psicólogas e advogadas voluntárias</strong> ou saiba como acessar
+              os serviços públicos especializados.
+            </p>
+          </div>
+          <a href="inicio.html" class="choice-card__arrow" aria-label="Quero buscar ajuda">→</a>
+        </article>
+
+        <article class="choice-card">
+          <img class="choice-card__icon" src="assets/img/icone-voluntaria.png" alt="" aria-hidden="true">
+          <div class="choice-card__body">
+            <h2 class="choice-card__title">Quero ser voluntária</h2>
+            <p>
+              Sua atuação como <strong>profissional da saúde, psicóloga, advogada, etc.</strong>
+              pode transformar a vida de muitas mulheres. Junte-se à nossa rede voluntária!
+              Clique no botão abaixo para entender como participar.
+            </p>
+          </div>
+          <a href="cadastro.html" class="choice-card__arrow" aria-label="Quero ser voluntária">→</a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="about">
+     <div class="container">
+      <div class="about__inner">
+      <div class="about__image" role="img"
+           aria-label="Mulher sorrindo ao lado de outras mulheres, em tons de rosa"></div>
+      <div class="about__text">
+        <h2 class="about__title">Somos uma organização feita para mulheres.</h2>
+        <p>
+          O Elas por Elas é um projeto educativo voltado à prevenção e ao enfrentamento
+          da violência contra a mulher. Por meio da informação e da tecnologia, buscamos
+          ampliar o conhecimento sobre os tipos de violência, os direitos das mulheres
+          e os caminhos para buscar ajuda.
+        </p>
+        <a href="quem-somos.html" class="btn btn--primary">Saiba Mais</a>
+      </div>
+      </div>
+     </div>
+    </section>
+
+    <section class="map-cta" id="mapa">
+     <div class="container map-cta__inner">
+      <div class="map-cta__content">
+        <h2 class="map-cta__title">Mapa dos Serviços Públicos</h2>
+        <div class="map-cta__body">
+          <p>
+            Encontre endereços e informações sobre delegacias, centros de referência,
+            defensorias, saúde e assistência social.
+          </p>
+          <p class="map-cta__highlight">Acesse o mapa e encontre o serviço mais próximo de você!</p>
+          <a href="mapa.html" class="btn btn--dark">
+            Acessar mapa <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="map-cta__image">
+        <img src="assets/img/mapa-mulher.png"
+             alt="Ilustração de mulher consultando o celular ao lado de um mapa com marcadores">
+      </div>
+     </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container faq__inner">
+        <div class="faq__image">
+          <img src="assets/img/mao-simbolo.png" alt="" aria-hidden="true">
+        </div>
+        <div class="faq__content">
+          <h2 class="faq__title">Perguntas frequentes</h2>
+
+          <details class="faq__item">
+            <summary>Preciso criar uma conta para ser acolhida?</summary>
+            <p>
+              Não. Clique em “Acessar” e você entra direto, sem cadastro e sem informar
+              nome ou e-mail. A conta existe apenas para as profissionais voluntárias.
+            </p>
+          </details>
+
+          <details class="faq__item">
+            <summary>Sou psicóloga ou advogada e quero ajudar. Como faço?</summary>
+            <p>
+              Clique em “Sou voluntária” e crie sua conta. Você informa seu registro
+              profissional e a sua área de atuação. Seu perfil aparece na busca depois
+              que suas credenciais forem verificadas.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="emergency" aria-label="Canais oficiais de emergência">
+      <div class="container">
+        <div class="emergency__box">
+          <p class="emergency__line">
+            Em <strong>perigo?</strong> Ligue agora para o
+            <a href="tel:190" class="emergency__number">190</a>
+          </p>
+          <p class="emergency__line emergency__line--right">
+            Para orientação, ligue
+            <a href="tel:180" class="emergency__number">180.</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__box">
+
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="index.html" class="footer__logo">Elas por Elas</a>
+            <p>
+              Informação e tecnologia para conectar mulheres em situação de violência
+              à rede de apoio em Pernambuco.
+            </p>
+          </div>
+
+          <nav class="footer__col" aria-label="Navegação do rodapé">
+            <h2 class="footer__heading">Navegue</h2>
+            <ul>
+              <li><a href="quem-somos.html">Quem Somos</a></li>
+              <li><a href="inicio.html">Quero buscar ajuda</a></li>
+              <li><a href="cadastro.html">Quero ser voluntária</a></li>
+              <li><a href="mapa.html">Mapa dos serviços</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer__col">
+            <h2 class="footer__heading">Voluntárias</h2>
+            <ul>
+              <li><a href="login.html">Entrar como voluntária</a></li>
+              <li><a href="cadastro.html">Cadastrar-se</a></li>
+              <li><a href="index.html#faq">Perguntas frequentes</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h2 class="footer__heading">Canais oficiais</h2>
+            <ul class="footer__phones">
+              <li>
+                <a href="tel:190"><strong>190</strong> Polícia Militar</a>
+                <span>Em caso de perigo imediato</span>
+              </li>
+              <li>
+                <a href="tel:180"><strong>180</strong> Central de Atendimento à Mulher</a>
+                <span>Orientação e denúncia, 24h e gratuito</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© <span id="ano">2026</span> Elas por Elas · Projeto acadêmico</p>
+          <p>Esta plataforma não substitui os canais oficiais de emergência.</p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
