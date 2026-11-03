@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seja voluntária | Elas por Elas</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Quicksand:wght@400;500;600;700&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Elas por Elas, página inicial">Elas por Elas</a>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="menu" class="nav" aria-label="Menu principal">
+        <a href="quem-somos.html" class="nav__link">Quem Somos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="auth">
+      <div class="container">
+        <div class="auth__card">
+
+          <span class="auth__tag">Área da voluntária</span>
+          <h1 class="auth__title">Seja voluntária!</h1>
+          <p class="auth__subtitle">
+            Crie sua conta para oferecer atendimento gratuito. Seu perfil só aparece
+            na busca depois que o registro profissional for verificado.
+          </p>
+
+          <form class="auth__form js-auth-form" action="/cadastro" method="post" data-redirect="painel.html?status=analise" novalidate>
+
+            <div class="field">
+              <label class="field__label" for="nome">Nome completo</label>
+              <input class="field__input" type="text" id="nome" name="nome"
+                     autocomplete="name" placeholder="Seu nome completo" required
+                     aria-describedby="nome-erro">
+              <p class="field__error" id="nome-erro" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="email">E-mail</label>
+              <input class="field__input" type="email" id="email" name="email"
+                     autocomplete="email" placeholder="seu@email.com" required
+                     aria-describedby="email-erro">
+              <p class="field__error" id="email-erro" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="telefone">Telefone de contato</label>
+              <input class="field__input" type="tel" id="telefone" name="telefoneContato"
+                     autocomplete="tel" placeholder="(81) 90000-0000" required
+                     inputmode="tel" aria-describedby="telefone-dica telefone-erro">
+              <p class="field__hint" id="telefone-dica">É o número que as mulheres vão usar para falar com você.</p>
+              <p class="field__error" id="telefone-erro" aria-live="polite"></p>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label class="field__label" for="area">Área de atuação</label>
+                <select class="field__input" id="area" name="area" required aria-describedby="area-erro">
+                  <option value="">Selecione</option>
+                  <option value="PSICOLOGIA">Psicologia</option>
+                  <option value="DIREITO">Direito</option>
+                  <option value="SERVICO_SOCIAL">Serviço Social</option>
+                  <option value="SAUDE">Saúde</option>
+                  <option value="OUTRA">Outra</option>
+                </select>
+                <p class="field__error" id="area-erro" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="registro">Registro profissional</label>
+                <input class="field__input" type="text" id="registro" name="registroProfissional"
+                       placeholder="Ex.: CRP 02/12345" required aria-describedby="registro-erro">
+                <p class="field__error" id="registro-erro" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="senha">Senha</label>
+              <div class="field__password">
+                <input class="field__input" type="password" id="senha" name="senha"
+                       autocomplete="new-password" placeholder="Mínimo de 8 caracteres" required
+                       minlength="8" aria-describedby="senha-dica senha-erro">
+                <button type="button" class="field__eye js-toggle-senha"
+                        aria-controls="senha" aria-label="Mostrar senha" aria-pressed="false">
+                  <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                  <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.9 17.9A10.1 10.1 0 0 1 12 19C5 19 1 12 1 12a18.5 18.5 0 0 1 5.1-5.9M9.9 5.2A9.1 9.1 0 0 1 12 5c7 0 11 7 11 7a18.5 18.5 0 0 1-2.2 3.2M14.1 14.1a3 3 0 1 1-4.2-4.2"/><path d="M1 1l22 22"/></svg>
+                </button>
+              </div>
+              <p class="field__hint" id="senha-dica">Use pelo menos 8 caracteres, com letras e números.</p>
+              <p class="field__error" id="senha-erro" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="confirmar-senha">Confirmar senha</label>
+              <div class="field__password">
+                <input class="field__input" type="password" id="confirmar-senha" name="confirmarSenha"
+                       autocomplete="new-password" placeholder="Repita a senha" required
+                       data-match="senha" aria-describedby="confirmar-senha-erro">
+                <button type="button" class="field__eye js-toggle-senha"
+                        aria-controls="confirmar-senha" aria-label="Mostrar senha" aria-pressed="false">
+                  <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                  <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.9 17.9A10.1 10.1 0 0 1 12 19C5 19 1 12 1 12a18.5 18.5 0 0 1 5.1-5.9M9.9 5.2A9.1 9.1 0 0 1 12 5c7 0 11 7 11 7a18.5 18.5 0 0 1-2.2 3.2M14.1 14.1a3 3 0 1 1-4.2-4.2"/><path d="M1 1l22 22"/></svg>
+                </button>
+              </div>
+              <p class="field__error" id="confirmar-senha-erro" aria-live="polite"></p>
+            </div>
+
+            <div class="auth__actions auth__actions--single">
+              <button type="submit" class="btn btn--coral">Criar conta</button>
+            </div>
+
+            <p class="auth__switch">Já tem uma conta? <a href="login.html">Acessar</a></p>
+
+            <p class="auth__status" role="status" aria-live="polite"></p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>

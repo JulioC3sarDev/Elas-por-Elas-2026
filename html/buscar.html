@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscar serviços | Elas por Elas</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;600;700&family=Quicksand:wght@400;500;600;700&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <button class="quick-exit js-quick-exit" type="button" aria-label="Saída rápida: sair desta página agora">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+    Saída rápida
+  </button>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Elas por Elas, página inicial">Elas por Elas</a>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="menu" class="nav" aria-label="Menu principal">
+        <a href="quem-somos.html" class="nav__link">Quem Somos</a>
+        <a href="index.html#faq" class="nav__icon" aria-label="Ajuda">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+        </a>
+        <a href="login.html" class="btn btn--outline nav__cta">Sou voluntária</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <section class="fs-hero">
+      <div class="container">
+      <div class="fs-hero__inner">
+        <div class="fs-hero__text">
+          <a href="inicio.html" class="back-link"><span aria-hidden="true">←</span> Voltar</a>
+          <span class="fs-pill">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            Apoio em Pernambuco
+          </span>
+          <h1 class="fs-hero__title">
+            Você não está <span class="fs-underline">sozinha.</span>
+            <svg class="fs-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          </h1>
+          <p class="fs-hero__lead">Encontrar ajuda deve ser simples.</p>
+          <p class="fs-hero__text-p">Escolha o tipo de apoio que procura e vamos mostrar os serviços mais próximos de você.</p>
+        </div>
+        <img class="fs-hero__image" src="../assets/img/hero-punhos.png"
+             alt="Ilustração de três punhos erguidos de mulheres diversas, cercados por flores">
+      </div>
+      </div>
+    </section>
+
+    <section class="fs-urgent-wrap" aria-label="Ajuda urgente">
+      <div class="container">
+        <div class="fs-urgent">
+          <span class="fs-urgent__icon" aria-hidden="true">!</span>
+          <p class="fs-urgent__text">
+            <strong>Precisa de ajuda urgente?</strong>
+            Acesse os canais oficiais:
+          </p>
+          <div class="fs-urgent__actions">
+            <a href="tel:180" class="fs-call fs-call--light">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+              Ligue 180
+            </a>
+            <a href="tel:190" class="fs-call fs-call--strong">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Emergência 190
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <form class="js-search-form" novalidate>
+
+      <section class="fs-types" aria-labelledby="tipos-titulo">
+        <div class="container">
+          <h2 id="tipos-titulo" class="fs-section-title">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M5 8 3 6M19 8l2-2M8 21l2-8 9 3-11 5Z"/></svg>
+            Que tipo de ajuda você procura?
+          </h2>
+          <p class="fs-hint" id="tipos-dica">Escolha uma ou mais opções. Se não escolher nenhuma, mostramos todas.</p>
+
+          <div class="fs-types__grid" role="group" aria-describedby="tipos-dica">
+            <label class="type-card">
+              <input type="checkbox" name="categoria" value="PSICOLOGICO">
+              <span class="type-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M12 13s-3-1.8-3-3.6A1.6 1.6 0 0 1 12 8.6a1.6 1.6 0 0 1 3 .8C15 11.2 12 13 12 13z"/></svg></span>
+              <span class="type-card__text"><strong>Psicológico</strong><small>Cuide da sua saúde mental</small></span>
+              <span class="type-card__check" aria-hidden="true"></span>
+            </label>
+            <label class="type-card">
+              <input type="checkbox" name="categoria" value="JURIDICO">
+              <span class="type-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7 2 14a3 3 0 0 0 6 0Z"/><path d="m19 7-3 7a3 3 0 0 0 6 0Z"/><path d="M8 21h8"/></svg></span>
+              <span class="type-card__text"><strong>Jurídico</strong><small>Conheça seus direitos</small></span>
+              <span class="type-card__check" aria-hidden="true"></span>
+            </label>
+            <label class="type-card">
+              <input type="checkbox" name="categoria" value="VIOLENCIA">
+              <span class="type-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 15s-3-1.8-3-3.6A1.6 1.6 0 0 1 12 10.6a1.6 1.6 0 0 1 3 .8c0 1.8-3 3.6-3 3.6z"/></svg></span>
+              <span class="type-card__text"><strong>Violência doméstica</strong><small>Encontre proteção</small></span>
+              <span class="type-card__check" aria-hidden="true"></span>
+            </label>
+            <label class="type-card">
+              <input type="checkbox" name="categoria" value="SAUDE">
+              <span class="type-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></svg></span>
+              <span class="type-card__text"><strong>Saúde da mulher</strong><small>Atenção e bem-estar</small></span>
+              <span class="type-card__check" aria-hidden="true"></span>
+            </label>
+            <label class="type-card">
+              <input type="checkbox" name="categoria" value="SOCIAL">
+              <span class="type-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+              <span class="type-card__text"><strong>Assistência social</strong><small>Benefícios e apoio financeiro</small></span>
+              <span class="type-card__check" aria-hidden="true"></span>
+            </label>
+            <label class="type-card">
+              <input type="checkbox" name="categoria" value="TRABALHO">
+              <span class="type-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M2 13h20"/></svg></span>
+              <span class="type-card__text"><strong>Trabalho</strong><small>Orientação profissional</small></span>
+              <span class="type-card__check" aria-hidden="true"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="fs-steps">
+        <div class="container">
+          <div class="fs-steps__grid">
+
+            <div class="fs-card">
+              <div class="fs-step">
+                <label class="fs-step__title" for="municipio">
+                  <span class="fs-step__num">1</span> Onde você está?
+                </label>
+                <div class="fs-select">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <select class="field__input" id="municipio" name="municipio" required aria-describedby="municipio-erro">
+                    <option value="">Selecione o município</option>
+                  </select>
+                </div>
+                <p class="field__error" id="municipio-erro" aria-live="polite"></p>
+              </div>
+
+              <fieldset class="fs-step">
+                <legend class="fs-step__title">
+                  <span class="fs-step__num">2</span> Como deseja ser atendida?
+                  <span class="field__optional">(opcional)</span>
+                </legend>
+                <div class="fs-chips">
+                  <label class="fs-chip"><input type="checkbox" name="modalidade" value="PRESENCIAL"><span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Presencial</span></label>
+                  <label class="fs-chip"><input type="checkbox" name="modalidade" value="ONLINE"><span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1"/><path d="M2 19h20"/></svg>Online</span></label>
+                  <label class="fs-chip"><input type="checkbox" name="modalidade" value="TELEFONE"><span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Telefone</span></label>
+                  <label class="fs-chip"><input type="checkbox" name="modalidade" value="WHATSAPP"><span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2-5.4A8.5 8.5 0 1 1 21 11.5z"/></svg>WhatsApp</span></label>
+                </div>
+              </fieldset>
+
+              <div class="fs-step">
+                <p class="fs-step__title">
+                  <span class="fs-step__num">3</span> Mais opções <span class="field__optional">(opcional)</span>
+                </p>
+                <div class="fs-more">
+                  <div class="fs-select">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M8 10h.01M16 10h.01M12 10h.01M8 14h.01M16 14h.01M12 14h.01"/></svg>
+                    <label class="sr-only" for="bairro">Bairro (opcional)</label>
+                    <input class="field__input" type="text" id="bairro" name="bairro" list="lista-bairros"
+                           placeholder="Bairro (opcional)" autocomplete="off">
+                    <datalist id="lista-bairros"></datalist>
+                  </div>
+                  <div class="fs-select">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    <label class="sr-only" for="destino">Quem atende</label>
+                    <select class="field__input" id="destino" name="destino">
+                      <option value="TODOS">Serviços públicos e voluntárias</option>
+                      <option value="UNIDADE">Só serviços públicos</option>
+                      <option value="PROFISSIONAL">Só voluntárias</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <aside class="fs-private" aria-label="Sobre a sua privacidade">
+              <span class="fs-private__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><rect x="9" y="10" width="6" height="5" rx="1"/><path d="M10 10V8.5a2 2 0 0 1 4 0V10"/></svg>
+              </span>
+              <h2 class="fs-private__title">Sua busca é privada</h2>
+              <p class="fs-private__text">Respeitamos sua privacidade e não registramos denúncias.</p>
+              <ul>
+                <li>Não pedimos sua história</li>
+                <li>Serviços verificados pela equipe</li>
+                <li>Uso gratuito</li>
+                <li>Sem instalação de aplicativo</li>
+              </ul>
+            </aside>
+
+          </div>
+
+          <button type="submit" class="fs-submit">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            Encontrar apoio perto de mim
+            <span aria-hidden="true">→</span>
+          </button>
+
+          <p class="fs-count">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span class="js-count">Serviços cadastrados em Pernambuco</span>
+          </p>
+        </div>
+      </section>
+    </form>
+
+    <section class="results" id="resultados" aria-labelledby="resultados-titulo" hidden>
+      <div class="container">
+        <div class="results__head">
+          <h2 id="resultados-titulo" class="results__title" tabindex="-1">Resultados</h2>
+          <p class="results__summary js-summary" aria-live="polite"></p>
+        </div>
+        <p class="demo-note">Protótipo: os resultados abaixo são <strong>dados de exemplo fictícios</strong>.</p>
+        <div class="results__list js-results"></div>
+      </div>
+    </section>
+
+    <section class="fs-together">
+      <div class="container">
+        <div class="fs-together__box">
+          <p>Juntas somos mais <span class="fs-script">fortes</span>
+            <svg class="fs-heart fs-heart--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/inicio.js"></script>
+  <script src="../js/dados-exemplo.js"></script>
+  <script src="../js/buscar.js"></script>
+</body>
+</html>
