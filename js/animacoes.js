@@ -7,7 +7,7 @@
     '.faq__image', '.faq__content', '.emergency__box', '.footer__box',
     '.welcome__box', '.path-card', '.section-title', '.carousel', '.feature', '.expect-card',
     '.fs-hero__inner', '.fs-urgent', '.fs-section-title', '.type-card', '.fs-card', '.fs-private', '.fs-submit',
-    '.fs-count', '.fs-together__box',
+    '.fs-count', '.fs-together__box', '.tree-card',
     '.map-intro', '.map-app',
     '.vol-hero__box', '.vol-filters', '.vol-list__head', '.vol-how__grid li', '.vol-cta',
     '.chat-join__info', '.chat-join__form',

@@ -38,7 +38,7 @@ const ICONES = {
 };
 const svg = (cat) => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONES[cat]}</svg>`;
 
-const mapa = L.map('mapa', { zoomControl: false, scrollWheelZoom: true }).setView(CENTRO_RECIFE, 12);
+const mapa = L.map('mapa', { zoomControl: false, scrollWheelZoom: true }).setView(CENTRO_RECIFE, 13);
 L.control.zoom({ position: 'bottomright' }).addTo(mapa);
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -51,9 +51,9 @@ function iconePino(cat, ativo = false) {
   return L.divIcon({
     className: '',
     html: `<span class="map-pin${ativo ? ' is-active' : ''}" style="--pin:${cor}">${svg(cat)}</span>`,
-    iconSize: [40, 48],
-    iconAnchor: [20, 46],
-    popupAnchor: [0, -42],
+    iconSize: [48, 58],
+    iconAnchor: [24, 56],
+    popupAnchor: [0, -50],
   });
 }
 
@@ -75,7 +75,7 @@ function htmlPopup(p) {
 const marcadores = new Map();
 POSTOS.forEach((p) => {
   const m = L.marker([p.lat, p.lng], { icon: iconePino(p.categoriaPosto), title: p.nome, alt: p.nome })
-    .bindPopup(htmlPopup(p), { maxWidth: 260 })
+    .bindPopup(htmlPopup(p), { maxWidth: 300, autoPanPadding: [24, 24] })
     .on('click', () => selecionar(p.id, false));
   marcadores.set(p.id, m);
 });
@@ -185,8 +185,9 @@ function selecionar(id, voar) {
   const m = marcadores.get(id);
   m.setIcon(iconePino(p.categoriaPosto, true));
   if (voar) {
+    mapa.closePopup();
+    mapa.once('moveend', () => m.openPopup());
     mapa.flyTo([p.lat, p.lng], 15, { duration: 0.6 });
-    m.openPopup();
   }
   lista.querySelectorAll('.map-item').forEach((el) =>
     el.classList.toggle('is-selected', Number(el.dataset.id) === id));
