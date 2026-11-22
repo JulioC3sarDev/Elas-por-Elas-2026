@@ -26,6 +26,11 @@ const Sessao = {
   },
 };
 
+function usuariaLogada() {
+  const s = Sessao.obter();
+  return s ? s.usuaria : null;
+}
+
 class ApiErro extends Error {
   constructor(status, mensagem) {
     super(mensagem);
@@ -149,6 +154,71 @@ function avisarErro(mensagem) {
   destino.prepend(aviso);
 }
 
+const MEU_APOIO = new Map();
+
+async function carregarMeuApoio() {
+  MEU_APOIO.clear();
+  if (!Sessao.token()) return [];
+  const itens = await api('/meu-apoio');
+  itens.forEach((i) => MEU_APOIO.set(i.unidadeId || i.profissionalId, i.id));
+  return itens;
+}
+
+const SALVAR_ROTULO = 'Salvar em Meu apoio';
+const SALVO_ROTULO = 'Salvo em Meu apoio';
+
+function botaoSalvar(item) {
+  if (!BACKEND_CONECTADO || MODO_TESTE) return '';
+  const salvo = MEU_APOIO.has(item.id);
+  return `<button type="button" class="save-btn js-save" data-id="${item.id}" data-tipo="${item.tipoDestino}" aria-pressed="${salvo}">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+    <span>${salvo ? SALVO_ROTULO : SALVAR_ROTULO}</span></button>`;
+}
+
+function marcarSalvo(id, salvo) {
+  document.querySelectorAll(`.js-save[data-id="${id}"]`).forEach((b) => {
+    b.setAttribute('aria-pressed', salvo);
+    b.querySelector('span').textContent = salvo ? SALVO_ROTULO : SALVAR_ROTULO;
+  });
+}
+
+async function alternarSalvo(botao) {
+  if (!Sessao.obter()) {
+    const voltar = `${location.pathname.split('/').pop()}${location.search}`;
+    window.location.href = `login.html?voltar=${encodeURIComponent(voltar)}`;
+    return;
+  }
+  const { id, tipo } = botao.dataset;
+  const rotulo = botao.querySelector('span');
+  botao.disabled = true;
+  try {
+    if (MEU_APOIO.has(id)) {
+      await api(`/meu-apoio/${MEU_APOIO.get(id)}`, { metodo: 'DELETE', autenticada: true });
+      MEU_APOIO.delete(id);
+    } else {
+      const item = await api('/meu-apoio', {
+        metodo: 'POST',
+        corpo: tipo === 'UNIDADE' ? { unidadeId: id } : { profissionalId: id },
+        autenticada: true,
+      });
+      MEU_APOIO.set(id, item.id);
+    }
+    marcarSalvo(id, MEU_APOIO.has(id));
+  } catch (e) {
+    if (e.status === 401) return;
+    const antes = rotulo.textContent;
+    rotulo.textContent = 'Não foi possível salvar. Tente de novo.';
+    setTimeout(() => { rotulo.textContent = antes; }, 3000);
+  } finally {
+    botao.disabled = false;
+  }
+}
+
+document.addEventListener('click', (e) => {
+  const botao = e.target.closest('.js-save');
+  if (botao) alternarSalvo(botao);
+});
+
 // Páginas públicas: busca os dados no servidor antes de executar o script da página.
 async function iniciarComDados(src) {
   if (BACKEND_CONECTADO && !MODO_TESTE) {
@@ -157,6 +227,9 @@ async function iniciarComDados(src) {
     } catch (e) {
       avisarErro(e.message);
     }
+    try {
+      await carregarMeuApoio();
+    } catch (e) { /* a página funciona sem os favoritos */ }
   }
   carregarScript(src);
 }
@@ -204,6 +277,10 @@ async function iniciarPainel(src) {
   }
   if (!Sessao.obter()) {
     window.location.replace('login.html');
+    return;
+  }
+  if (usuariaLogada().role === 'USER') {
+    window.location.replace('meu-apoio.html');
     return;
   }
   try {

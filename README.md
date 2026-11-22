@@ -13,7 +13,15 @@ Com `BACKEND_CONECTADO = true` e `API_URL` em `js/config.js`, o site usa a API (
 1. Suba o banco e a API conforme o README do back-end (porta `8080`).
 2. Abra o front com o Live Server na porta `5500` (a API libera essa origem via CORS; para outra, ajuste `CORS_ALLOWED_ORIGINS`).
 
-Conectado à API: busca, mapa e voluntárias (`GET /unidades`, `GET /profissionais`), login e cadastro de voluntária, e o painel (perfil, pausa e exclusão do perfil). A sessão (JWT) fica em `sessionStorage`, então a saída rápida também encerra o acesso.
+Conectado à API: busca, mapa e voluntárias (`GET /unidades`, `GET /profissionais`), login, cadastro de voluntária e de usuária comum, **Meu apoio** e o painel (perfil, pausa e exclusão do perfil). A sessão (JWT) fica em `sessionStorage`, então a saída rápida também encerra o acesso.
+
+### Usuária comum e Meu apoio
+
+- `html/cadastro-usuaria.html` cria a conta (`POST /auth/cadastro`, papel `USER`); nome, e-mail e senha são obrigatórios, o município é opcional.
+- Com a conta, os cards da busca, do mapa e das voluntárias mostram **Salvar em Meu apoio** (`POST`/`DELETE /meu-apoio`). Sem login, o botão leva ao login e volta para a mesma página.
+- `html/meu-apoio.html` lista e remove o que foi salvo. Contas `USER` são enviadas para essa página no lugar do painel da voluntária.
+- Os botões de salvar só aparecem com `BACKEND_CONECTADO = true`.
+
 Continuam simulados: rodas/chat, moderação, materiais e troca de senha.
 Unidades sem latitude/longitude não aparecem no mapa. Voluntárias só aparecem depois de verificadas por um ADMIN.
 

@@ -103,6 +103,7 @@ function card(v) {
       <div class="vol-card__actions">
         <button type="button" class="vol-card__more" data-id="${v.id}">Ver perfil</button>
         ${botoesContato(v)}
+        ${botaoSalvar(v)}
       </div>
     </article>`;
 }
@@ -174,7 +175,7 @@ grid.addEventListener('click', (e) => {
       </ul>
     </div>
 
-    <div class="vol-card__actions">${botoesContato(v)}</div>
+    <div class="vol-card__actions">${botoesContato(v)}${botaoSalvar(v)}</div>
 
     <button type="button" class="vol-dialog__report js-report">Algo errado com este perfil? Avisar a equipe</button>
     <p class="vol-dialog__report-msg js-report-msg" role="status" aria-live="polite"></p>`;
