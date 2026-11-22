@@ -164,6 +164,7 @@ function cardResultado(s) {
           ${escapar(s.telefone)}
         </a>
         ${zap}
+        ${botaoSalvar(s)}
       </div>
     </article>`;
 }

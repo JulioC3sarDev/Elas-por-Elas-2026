@@ -1642,6 +1642,30 @@ select.field__input { appearance: auto; cursor: pointer; }
 .map-action--route { background: var(--rosa-claro); color: var(--coral-dark); }
 .map-action--route:hover { background: #FAD6CC; }
 
+.save-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 2px solid var(--roxo-claro);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--roxo-escuro);
+  font: inherit;
+  font-size: .95rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.save-btn:hover { background: var(--lilas-claro); }
+.save-btn:disabled { opacity: .6; cursor: wait; }
+.save-btn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.save-btn[aria-pressed="true"] { background: var(--rosa-claro); border-color: var(--coral); color: var(--coral-dark); }
+.save-btn[aria-pressed="true"] svg { fill: currentColor; }
+.result-card__actions .save-btn, .vol-card__actions .save-btn { width: 100%; grid-column: 1 / -1; }
+
+.apoio-aviso { font-size: .95rem; color: #666; margin-top: 6px; }
+
 .map-empty { padding: 24px; border: 0 !important; text-align: center; color: #555; }
 .map-empty a { color: var(--coral-dark); }
 
@@ -1737,6 +1761,7 @@ select.field__input { appearance: auto; cursor: pointer; }
   text-decoration: none;
 }
 .map-popup__actions a + a { background: var(--coral); }
+.map-popup .save-btn { width: 100%; margin-top: 6px; padding: 6px 10px; font-size: .85rem; }
 
 .leaflet-control-zoom a { border-radius: 10px !important; color: var(--roxo-escuro) !important; }
 .leaflet-bar { border: 0 !important; box-shadow: 0 4px 14px rgba(0,0,0,.12) !important; border-radius: 12px !important; }

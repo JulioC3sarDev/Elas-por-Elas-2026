@@ -70,15 +70,22 @@ function htmlPopup(p) {
         <a href="tel:${p.telefone.replace(/\D/g, '')}">Ligar</a>
         <a href="${rota}" target="_blank" rel="noopener">Como chegar</a>
       </div>
+      ${botaoSalvar(p)}
     </div>`;
 }
 
 const marcadores = new Map();
 POSTOS.forEach((p) => {
   const m = L.marker([p.lat, p.lng], { icon: iconePino(p.categoriaPosto), title: p.nome, alt: p.nome })
-    .bindPopup(htmlPopup(p), { maxWidth: 300, autoPanPadding: [24, 24] })
+    .bindPopup(() => htmlPopup(p), { maxWidth: 300, autoPanPadding: [24, 24] })
     .on('click', () => selecionar(p.id, false));
   marcadores.set(p.id, m);
+});
+
+// O Leaflet bloqueia a propagação dos cliques no popup, então o clique é ligado aqui.
+mapa.on('popupopen', (e) => {
+  const botao = e.popup.getElement().querySelector('.js-save');
+  if (botao) botao.addEventListener('click', () => alternarSalvo(botao));
 });
 
 Object.entries(CATEGORIAS_POSTO).forEach(([cat, { nome, cor }]) => {
@@ -158,6 +165,7 @@ function atualizar(enquadrar) {
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 19-9-9 19-2-8-8-2z"/></svg>
           Como chegar
         </a>
+        ${botaoSalvar(p)}
       </div>
     </li>`).join('')
     : `<li class="map-empty">Nenhum posto encontrado com esses filtros.<br>
