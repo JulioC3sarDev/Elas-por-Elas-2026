@@ -172,7 +172,7 @@ function atualizar(enquadrar) {
 
 lista.addEventListener('click', (e) => {
   const item = e.target.closest('.map-item');
-  if (item) selecionar(Number(item.dataset.id), true);
+  if (item) selecionar(item.dataset.id, true);
 });
 
 function selecionar(id, voar) {
@@ -190,7 +190,7 @@ function selecionar(id, voar) {
     mapa.flyTo([p.lat, p.lng], 15, { duration: 0.6 });
   }
   lista.querySelectorAll('.map-item').forEach((el) =>
-    el.classList.toggle('is-selected', Number(el.dataset.id) === id));
+    el.classList.toggle('is-selected', el.dataset.id === id));
   const ativo = lista.querySelector('.map-item.is-selected');
   if (ativo && !voar) ativo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }

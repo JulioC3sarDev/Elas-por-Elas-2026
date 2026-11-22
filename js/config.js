@@ -1,6 +1,8 @@
 const MODO_TESTE = false;
 
-const BACKEND_CONECTADO = false;
+const BACKEND_CONECTADO = true;
+
+const API_URL = 'http://localhost:8080/api/v1';
 
 document.addEventListener('DOMContentLoaded', () => {
   if (MODO_TESTE) {

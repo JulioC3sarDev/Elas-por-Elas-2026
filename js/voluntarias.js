@@ -133,7 +133,7 @@ function desenhar() {
 grid.addEventListener('click', (e) => {
   const botao = e.target.closest('.vol-card__more');
   if (!botao) return;
-  const v = VOLUNTARIAS.find((x) => x.id === Number(botao.dataset.id));
+  const v = VOLUNTARIAS.find((x) => x.id === botao.dataset.id);
   const area = AREAS[v.area];
 
   dialogBody.style.setProperty('--area', area.cor);

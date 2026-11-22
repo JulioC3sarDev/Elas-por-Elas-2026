@@ -2,10 +2,12 @@ const PERFIL_VAZIO = {
   nome: '', profissao: '', registro: '', area: 'PSICOLOGIA', bio: '', servicos: [], modalidades: [],
   disponibilidade: '', telefone: '', municipio: 'Recife', bairro: '', endereco: null, verificadoEm: null,
 };
-const base = SERVICOS.find((s) => s.id === 8) || PERFIL_VAZIO;
-const perfil = { ...base, servicos: [...base.servicos], modalidades: [...base.modalidades], disponivel: true };
+const base = PERFIL_API || SERVICOS.find((s) => s.id === 8) || PERFIL_VAZIO;
+const perfil = { ...base, servicos: [...base.servicos], modalidades: [...base.modalidades], disponivel: base.disponivel ?? true };
 
-const STATUS = (!MODO_TESTE || new URLSearchParams(location.search).get('status') === 'analise') ? 'EM_ANALISE' : 'APROVADO';
+const STATUS = PERFIL_API
+  ? (PERFIL_API.status === 'APROVADA' ? 'APROVADO' : 'EM_ANALISE')
+  : ((!MODO_TESTE || new URLSearchParams(location.search).get('status') === 'analise') ? 'EM_ANALISE' : 'APROVADO');
 
 const $ = (sel) => document.querySelector(sel);
 const escapar = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({
@@ -69,13 +71,30 @@ function desenharStatus() {
 }
 
 const switchDisp = $('.js-available');
-switchDisp.addEventListener('change', () => {
-  perfil.disponivel = switchDisp.checked;
+function desenharDisponibilidade() {
+  switchDisp.checked = perfil.disponivel;
   $('.js-available-label').textContent = perfil.disponivel ? 'Aceitando novos contatos' : 'Em pausa';
   $('.js-available-hint').textContent = perfil.disponivel
     ? 'Seu perfil aparece na busca e na rede de voluntárias.'
     : 'Seu perfil não aparece na busca enquanto estiver em pausa.';
   desenharPrevia();
+}
+switchDisp.addEventListener('change', async () => {
+  const novo = switchDisp.checked;
+  if (PERFIL_API) {
+    switchDisp.disabled = true;
+    try {
+      await definirDisponibilidade(novo);
+    } catch (erro) {
+      switchDisp.checked = !novo;
+      switchDisp.disabled = false;
+      $('.js-available-hint').textContent = erro.message;
+      return;
+    }
+    switchDisp.disabled = false;
+  }
+  perfil.disponivel = novo;
+  desenharDisponibilidade();
 });
 
 function itensPerfil() {
@@ -145,7 +164,7 @@ form.addEventListener('input', () => {
   desenharPrevia();
 });
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
   lerForm();
   if (!perfil.nome) {
@@ -153,8 +172,22 @@ form.addEventListener('submit', (e) => {
     campos.nome.focus();
     return;
   }
+  if (PERFIL_API) {
+    const botao = form.querySelector('button[type="submit"]');
+    botao.disabled = true;
+    $('.js-saved').textContent = 'Salvando…';
+    try {
+      Object.assign(perfil, adaptarMeuPerfil(await salvarPerfil(perfil)));
+    } catch (erro) {
+      $('.js-saved').textContent = erro.message;
+      botao.disabled = false;
+      return;
+    }
+    botao.disabled = false;
+  }
   desenharProgresso();
   atualizarCabecalho();
+  desenharPrevia();
   $('.js-saved').textContent = 'Alterações salvas ✓';
 });
 
@@ -367,7 +400,8 @@ $('.js-pass-form').addEventListener('submit', (e) => {
   e.preventDefault();
   const nova = $('#c-nova').value;
   const msg = $('.js-pass-msg');
-  if (!$('#c-atual').value) msg.textContent = 'Digite a senha atual.';
+  if (PERFIL_API) msg.textContent = 'A troca de senha ainda não está disponível.';
+  else if (!$('#c-atual').value) msg.textContent = 'Digite a senha atual.';
   else if (nova.length < 8 || !/[a-zA-Z]/.test(nova) || !/\d/.test(nova)) msg.textContent = 'A nova senha precisa de 8 caracteres, com letras e números.';
   else { msg.textContent = 'Senha alterada ✓'; e.target.reset(); }
 });
@@ -375,11 +409,25 @@ $('.js-pass-form').addEventListener('submit', (e) => {
 $('.js-delete').addEventListener('click', () => {
   abrirJanela(`
     <h2 id="dlg-title" class="vol-dialog__name">Excluir sua conta?</h2>
-    <p>Seu perfil sai da rede na hora e seus dados são apagados. Essa ação não pode ser desfeita.</p>
+    <p>Seu perfil sai da rede na hora e você será desconectada. Para reativá-lo, fale com a equipe.</p>
     <div class="vol-card__actions">
       <button type="button" class="btn btn--outline vol-btn js-close">Cancelar</button>
-      <a href="index.html" class="btn btn--coral vol-btn">Excluir conta</a>
+      <button type="button" class="btn btn--coral vol-btn js-confirm-delete">Excluir conta</button>
     </div>`);
+});
+
+document.addEventListener('click', async (e) => {
+  if (!e.target.closest('.js-confirm-delete')) return;
+  if (PERFIL_API) {
+    try {
+      await desativarMeuPerfil();
+    } catch (erro) {
+      $('.js-dialog-body').insertAdjacentHTML('beforeend', `<p role="alert">${escapar(erro.message)}</p>`);
+      return;
+    }
+    Sessao.limpar();
+  }
+  window.location.href = 'index.html';
 });
 
 if (MODO_TESTE) RODAS.acolhimento.mensagens.push(
@@ -515,7 +563,7 @@ atualizarCabecalho();
 desenharStatus();
 desenharProgresso();
 preencherForm();
-desenharPrevia();
+desenharDisponibilidade();
 desenharModeracao();
 abrirRodaLive('acolhimento');
 mostrarAba();

@@ -24,7 +24,7 @@
         <span class="auth__tag pn-user__tag">Área da voluntária</span>
         <span class="pn-user__avatar js-user-initials" aria-hidden="true"></span>
         <span class="pn-user__name">Olá, <strong class="js-user-name"></strong></span>
-        <a href="index.html" class="pn-user__logout">Sair</a>
+        <a href="index.html" class="pn-user__logout js-logout">Sair</a>
       </div>
     </div>
   </header>
@@ -50,7 +50,7 @@
       </nav>
 
       <div class="pn__content">
-        <p class="demo-note pn__demo">Protótipo: os dados deste painel são <strong>fictícios</strong>.</p>
+        <p class="demo-note pn__demo">Perfil e disponibilidade são <strong>reais</strong>. Rodas ao vivo, moderação e materiais ainda são <strong>demonstração</strong>.</p>
 
         <section class="pn-tab" id="tab-inicio" aria-labelledby="t-inicio">
           <h1 id="t-inicio" class="pn__title">Olá, <span class="js-user-first"></span> 💜</h1>
@@ -116,7 +116,7 @@
                 <legend>Identificação</legend>
                 <div class="field">
                   <label class="field__label" for="p-nome">Nome de exibição</label>
-                  <input class="field__input" id="p-nome" name="nome" required maxlength="60">
+                  <input class="field__input" id="p-nome" name="nome" required maxlength="60" readonly>
                 </div>
                 <div class="field-row">
                   <div class="field">
@@ -273,7 +273,7 @@
             <div class="pn-card">
               <h2 class="pn-card__title">Seus dados</h2>
               <p class="pn-card__note">Guardamos apenas o necessário para o seu perfil: nome, e-mail, telefone de contato, área e registro profissional.</p>
-              <a href="index.html" class="btn btn--outline pn-card__btn">Sair da conta</a>
+              <a href="index.html" class="btn btn--outline pn-card__btn js-logout">Sair da conta</a>
               <button type="button" class="pn-danger js-delete">Excluir minha conta</button>
             </div>
           </div>
@@ -290,7 +290,8 @@
   <script src="../js/config.js"></script>
   <script src="../js/animacoes.js"></script>
   <script src="../js/dados-exemplo.js"></script>
+  <script src="../js/api.js"></script>
   <script src="../js/rodas-dados.js"></script>
-  <script src="../js/painel.js"></script>
+  <script>iniciarPainel('../js/painel.js');</script>
 </body>
 </html>
