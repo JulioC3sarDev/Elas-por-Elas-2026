@@ -41,9 +41,10 @@ const svg = (cat) => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONES[cat]}
 const mapa = L.map('mapa', { zoomControl: false, scrollWheelZoom: true }).setView(CENTRO_RECIFE, 13);
 L.control.zoom({ position: 'bottomright' }).addTo(mapa);
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+// O CARTO passou a exigir API key; este provedor de ruas não exige.
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
   maxZoom: 19,
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  attribution: 'Tiles &copy; <a href="https://www.esri.com/">Esri</a>, HERE, Garmin, OpenStreetMap contributors',
 }).addTo(mapa);
 
 function iconePino(cat, ativo = false) {
