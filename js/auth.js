@@ -85,16 +85,56 @@ document.querySelectorAll('.js-auth-form').forEach((form) => {
       return;
     }
 
-    if (BACKEND_CONECTADO) return;
-
     evento.preventDefault();
-    if (MODO_TESTE) {
-      status.textContent = 'Tudo certo! Entrando no painel…';
-      if (form.dataset.redirect) {
+    if (!BACKEND_CONECTADO) {
+      status.textContent = MODO_TESTE
+        ? 'Tudo certo! Entrando no painel…'
+        : 'O acesso ainda não está disponível: o sistema não está conectado ao servidor.';
+      if (MODO_TESTE && form.dataset.redirect) {
         setTimeout(() => { window.location.href = form.dataset.redirect; }, 800);
       }
-    } else {
-      status.textContent = 'O acesso ainda não está disponível: o sistema não está conectado ao servidor.';
+      return;
     }
+    enviarFormulario(form, status);
   });
 });
+
+function dadosDoFormulario(form) {
+  return Object.fromEntries(new FormData(form).entries());
+}
+
+async function enviarFormulario(form, status) {
+  const botao = form.querySelector('button[type="submit"]');
+  const dados = dadosDoFormulario(form);
+  const cadastro = form.getAttribute('action') === '/cadastro';
+  botao.disabled = true;
+  status.textContent = cadastro ? 'Criando sua conta…' : 'Entrando…';
+
+  try {
+    let auth;
+    if (cadastro) {
+      const resposta = await api('/auth/cadastro-voluntaria', {
+        metodo: 'POST',
+        corpo: {
+          nome: dados.nome.trim(),
+          email: dados.email.trim(),
+          senha: dados.senha,
+          telefone: dados.telefoneContato,
+          area: dados.area,
+          registroProfissional: dados.registroProfissional.trim(),
+        },
+      });
+      auth = resposta.auth;
+    } else {
+      auth = await api('/auth/login', {
+        metodo: 'POST',
+        corpo: { email: dados.email.trim(), senha: dados.senha },
+      });
+    }
+    Sessao.salvar(auth);
+    window.location.href = form.dataset.redirect || 'painel.html';
+  } catch (erro) {
+    status.textContent = erro.status === 401 ? 'E-mail ou senha incorretos.' : erro.message;
+    botao.disabled = false;
+  }
+}
